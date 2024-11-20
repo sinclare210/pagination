@@ -1,18 +1,43 @@
-import Card from './components/Card';
-import Message from './components/Message';
-import Pagination from './components/Pagination';
+import { useState } from 'react';
 
 function App() {
+  const mess = [
+    "Learn React",
+    "Apply for jobs",
+    "Invest your new income"
+  ];
+  const step = 1;
+
   return (
     <div className="flex flex-col items-center justify-center min-h-screen bg-white p-4">
       <div className="bg-gray-100 p-12 rounded-2xl shadow-lg">
+        {/* Card Section */}
         <div className="flex flex-row gap-6 justify-center mb-8">
-          <Card number={1} />
-          <Card number={2} />
-          <Card number={3} />
+          <div className="flex justify-center items-center bg-gray-200 p-6 rounded-full w-20 h-20 shadow-md text-center">
+            <h3 className="text-3xl font-semibold">1</h3>
+          </div>
+          <div className="flex justify-center items-center bg-gray-200 p-6 rounded-full w-20 h-20 shadow-md text-center">
+            <h3 className="text-3xl font-semibold">2</h3>
+          </div>
+          <div className="flex justify-center items-center bg-gray-200 p-6 rounded-full w-20 h-20 shadow-md text-center">
+            <h3 className="text-3xl font-semibold">3</h3>
+          </div>
         </div>
-        <Message />
-        <Pagination />
+
+        {/* Message Section */}
+        <div className="mt-8 p-6 bg-white rounded-lg shadow-lg text-center text-gray-800">
+          <p className="text-lg font-medium">{mess[step]}</p>
+        </div>
+
+        {/* Pagination Section */}
+        <div className="flex justify-between items-center mt-6 w-full max-w-xs">
+          <button className="bg-blue-500 text-white py-2 px-4 rounded-lg hover:bg-blue-600 transition">
+            Previous
+          </button>
+          <button className="bg-blue-500 text-white py-2 px-4 rounded-lg hover:bg-blue-600 transition">
+            Next
+          </button>
+        </div>
       </div>
     </div>
   );
